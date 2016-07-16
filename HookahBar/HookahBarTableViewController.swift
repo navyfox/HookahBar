@@ -57,6 +57,46 @@ class HookahBarTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
+    //движение влево по ячейки
+//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//
+//    }
+
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        //создаем кнопку поделится через
+        let allShareAction = UITableViewRowAction(style: .Default, title: "Share") { (UITableViewRowAction, indexPath: NSIndexPath) in
+            let allShareActionMenu = UIAlertController(title: nil, message: "Поделиться через", preferredStyle: .ActionSheet)
+
+            let emailShareAction = UIAlertAction(title: "Email", style: .Default, handler: nil)
+            let facebookShareAction = UIAlertAction(title: "Facebook", style: .Default, handler: nil)
+            let vkShareAction = UIAlertAction(title: "VK", style: .Default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+
+            allShareActionMenu.addAction(emailShareAction)
+            allShareActionMenu.addAction(facebookShareAction)
+            allShareActionMenu.addAction(vkShareAction)
+            allShareActionMenu.addAction(cancelAction)
+
+            self.presentViewController(allShareActionMenu, animated: true, completion: nil)
+        }
+        //кнопка удалить
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Удалить") { (UITableViewRowAction, NSIndexPath) in
+
+            self.hookahBarAlreadyVisited.removeAtIndex(indexPath.row)
+            self.hookahBarImages.removeAtIndex(indexPath.row)
+            self.hookahBarLocation.removeAtIndex(indexPath.row)
+            self.hookahBarNames.removeAtIndex(indexPath.row)
+            self.hookahBarType.removeAtIndex(indexPath.row)
+            
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+
+        allShareAction.backgroundColor = UIColor(red: 184 / 225, green: 226 / 225, blue: 181 / 225, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor.redColor()
+
+        return [deleteAction, allShareAction]
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
