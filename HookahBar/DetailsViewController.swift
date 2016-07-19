@@ -26,6 +26,9 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         self.tableView.separatorColor = UIColor(red: 250 / 255, green: 212 / 255, blue: 225 / 255, alpha: 1.0)
 
         title = hookahBar.name
+
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func viewWillAppear(animated: Bool) {

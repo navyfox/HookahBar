@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--My Hookah Bar-->
@@ -21,28 +22,44 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2o1-qu-BYo">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2o1-qu-BYo">
                                             <rect key="frame" x="15" y="10" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="9BJ-UE-Zq9"/>
+                                                <constraint firstAttribute="width" constant="65" id="cwu-QL-U1H"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-Eg-dIC">
-                                            <rect key="frame" x="95" y="35" width="207" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-Eg-dIC">
+                                            <rect key="frame" x="95" y="35" width="194" height="18"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HB-Fb-PAf">
-                                            <rect key="frame" x="95" y="54" width="207" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HB-Fb-PAf">
+                                            <rect key="frame" x="95" y="59" width="27" height="16"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZW-qn-J2v">
-                                            <rect key="frame" x="95" y="8" width="207" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZW-qn-J2v">
+                                            <rect key="frame" x="95" y="8" width="45" height="22"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jAL-Eg-dIC" firstAttribute="leading" secondItem="I5f-w6-ia9" secondAttribute="leadingMargin" constant="87" id="3fx-ra-cWd"/>
+                                        <constraint firstItem="2o1-qu-BYo" firstAttribute="top" secondItem="I5f-w6-ia9" secondAttribute="topMargin" constant="2" id="7Jf-JZ-HLl"/>
+                                        <constraint firstItem="IZW-qn-J2v" firstAttribute="leading" secondItem="I5f-w6-ia9" secondAttribute="leadingMargin" constant="87" id="92Y-o8-JKM"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="jAL-Eg-dIC" secondAttribute="bottom" constant="23" id="JF7-gc-6m4"/>
+                                        <constraint firstItem="1HB-Fb-PAf" firstAttribute="leading" secondItem="I5f-w6-ia9" secondAttribute="leadingMargin" constant="87" id="LIp-7o-QdP"/>
+                                        <constraint firstItem="jAL-Eg-dIC" firstAttribute="top" secondItem="I5f-w6-ia9" secondAttribute="topMargin" constant="27" id="MbA-Yg-2D3"/>
+                                        <constraint firstItem="2o1-qu-BYo" firstAttribute="leading" secondItem="I5f-w6-ia9" secondAttribute="leadingMargin" constant="7" id="Xj5-Em-E4n"/>
+                                        <constraint firstAttribute="topMargin" secondItem="IZW-qn-J2v" secondAttribute="top" id="bK1-nA-vgh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="jAL-Eg-dIC" secondAttribute="trailing" constant="23" id="crE-Z7-428"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="1HB-Fb-PAf" secondAttribute="bottom" constant="1" id="k62-PN-5G5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="lacationLable" destination="jAL-Eg-dIC" id="m8L-Xe-IiV"/>
@@ -91,19 +108,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-8y-uTP">
-                                                    <rect key="frame" x="140" y="11" width="172" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-8y-uTP">
+                                                    <rect key="frame" x="140" y="11" width="182" height="21"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egG-yh-Ztd">
-                                                    <rect key="frame" x="18" y="11" width="122" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egG-yh-Ztd">
+                                                    <rect key="frame" x="16" y="11" width="25" height="21"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pcd-8y-uTP" firstAttribute="trailing" secondItem="E9i-cg-aoV" secondAttribute="trailingMargin" constant="10" id="849-cu-EGW"/>
+                                                <constraint firstItem="pcd-8y-uTP" firstAttribute="top" secondItem="E9i-cg-aoV" secondAttribute="topMargin" constant="3" id="AJs-yj-eHU"/>
+                                                <constraint firstItem="pcd-8y-uTP" firstAttribute="leading" secondItem="E9i-cg-aoV" secondAttribute="leadingMargin" constant="132" id="E9q-Zz-dxC"/>
+                                                <constraint firstItem="egG-yh-Ztd" firstAttribute="leading" secondItem="E9i-cg-aoV" secondAttribute="leadingMargin" constant="8" id="KlQ-Fz-axs"/>
+                                                <constraint firstItem="pcd-8y-uTP" firstAttribute="trailing" secondItem="E9i-cg-aoV" secondAttribute="trailingMargin" constant="10" id="Lk2-Sw-Cvz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="egG-yh-Ztd" secondAttribute="bottom" constant="3" id="jX6-gw-Bpe"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pcd-8y-uTP" secondAttribute="bottom" constant="3" id="tN3-Cm-Fhd"/>
+                                                <constraint firstItem="egG-yh-Ztd" firstAttribute="top" secondItem="E9i-cg-aoV" secondAttribute="topMargin" constant="3" id="vUf-6m-iKE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="keyLable" destination="egG-yh-Ztd" id="4Va-ug-kkf"/>
