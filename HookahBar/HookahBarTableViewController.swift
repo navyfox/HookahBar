@@ -11,50 +11,14 @@ import UIKit
 class HookahBarTableViewController: UITableViewController {
 
     var hookahBarNames = ["Hookah Way", "Hookah Place", "The Дым", "УК", "Smoke House", "Panda", "Smoke Lab", "Hookah Time", "Fumari house", "UFS"]
-    var hookahBarImages = ["hookahWay.jpg", "HP.png", "HP.png", "HP.png", "HP.png", "HP.png", "HP.png", "HP.png", "HP.png", "HP.png"]
+    var hookahBarImages = ["hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg"]
     var hookahBarLocation = ["Omsk", "Moskow", "Omsk", "Moskow", "Omsk", "Moskow", "Omsk", "Moskow", "Omsk", "Moskow"]
     var hookahBarType = ["Bar", "Lounge-Bar", "Restaurant", "Bar", "Lounge-Bar", "Restaurant", "Bar", "Lounge-Bar", "Restaurant", "Bar"]
     var hookahBarAlreadyVisited = [Bool](count: 10, repeatedValue: false)
 
 //Alert Controller
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let actionMenu = UIAlertController(title: nil, message: "Что делаем?", preferredStyle: UIAlertControllerStyle.ActionSheet)
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
-        actionMenu.addAction(cancelAction)
-
-        let iHaveBeenThereAction = UIAlertAction(title: "Я тут был", style: .Default, handler: {(action: UIAlertAction) in
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
-            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
-            self.hookahBarAlreadyVisited[indexPath.row] = true
-        })
-
-        let iHaveNeverBeenThereAction = UIAlertAction(title: "Я тут не был", style: .Default, handler: {(action: UIAlertAction) in
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
-            cell?.accessoryType = UITableViewCellAccessoryType.None
-            self.hookahBarAlreadyVisited[indexPath.row] = false
-        })
-
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        if cell?.accessoryType == .Checkmark {
-            actionMenu.addAction(iHaveNeverBeenThereAction)
-        } else {
-            actionMenu.addAction(iHaveBeenThereAction)
-        }
-
-        let callActionHandler = {(action: UIAlertAction!) -> Void in
-            let warningMessage = UIAlertController(title: "Сервис не доступен", message: "В данный момент вы не можите позвонить, попробуйте позже", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            warningMessage.addAction(okAction)
-
-            self.presentViewController(warningMessage, animated: true, completion: nil)
-        }
-        let callAction = UIAlertAction(title: "Call Hookah Bar", style: .Destructive, handler: callActionHandler)
-        actionMenu.addAction(callAction)
-
-        self.presentViewController(actionMenu, animated: true, completion: nil)
-
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
     }
 
     //движение влево по ячейки
@@ -184,14 +148,23 @@ class HookahBarTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetailsSegue" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let destinationVC = segue.destinationViewController as! DetailsViewController
+                print(self.hookahBarImages[indexPath.row])
+                destinationVC.hookahBarImage = self.hookahBarImages[indexPath.row]
+
+
+            }
+        }
     }
-    */
+
 
 }

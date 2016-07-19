@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oK4-eI-lO6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vJC-dZ-7Cw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Hookah Bar Table View Controller-->
+        <!--Title-->
         <scene sceneID="V0a-Wm-njC">
             <objects>
                 <tableViewController id="oK4-eI-lO6" customClass="HookahBarTableViewController" customModule="HookahBar" customModuleProvider="target" sceneMemberID="viewController">
@@ -15,7 +15,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="jRN-9L-bG5" customClass="HookahBarTableViewCell" customModule="HookahBar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="85"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jRN-9L-bG5" id="I5f-w6-ia9">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
@@ -49,6 +49,7 @@
                                     <outlet property="nameLable" destination="IZW-qn-J2v" id="v63-RP-qFL"/>
                                     <outlet property="thumbnailImageView" destination="2o1-qu-BYo" id="N8N-Xp-IYs"/>
                                     <outlet property="typeLable" destination="1HB-Fb-PAf" id="Eta-Mq-xFU"/>
+                                    <segue destination="pe8-zF-h2T" kind="push" identifier="showDetailsSegue" id="eth-w9-r4Q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -57,8 +58,54 @@
                             <outlet property="delegate" destination="oK4-eI-lO6" id="zjY-I6-ZRo"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="oGd-tO-nlE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTB-Yq-UPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="368"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="6jZ-vo-mMf">
+            <objects>
+                <viewController id="pe8-zF-h2T" customClass="DetailsViewController" customModule="HookahBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z2z-kF-2Fo"/>
+                        <viewControllerLayoutGuide type="bottom" id="HZq-uL-eO0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oTq-oe-FQ9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMG-3B-MID">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9sO-HF-llK"/>
+                    <connections>
+                        <outlet property="hookahBarImageView" destination="FMG-3B-MID" id="JgK-Pm-jgL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vRM-bJ-g5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uih-cv-sjm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vJC-dZ-7Cw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dXj-H8-cdd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oK4-eI-lO6" kind="relationship" relationship="rootViewController" id="Cvw-qR-Ad0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4v-w1-9ql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="152" y="368"/>
         </scene>
