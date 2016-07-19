@@ -59,11 +59,18 @@ class HookahBarTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.hidesBarsOnSwipe = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,10 +104,6 @@ class HookahBarTableViewController: UITableViewController {
         cell.thumbnailImageView.clipsToBounds = true
 
         return cell
-    }
-
-    override func prefersStatusBarHidden() -> Bool {
-        return true
     }
 
 
@@ -149,7 +152,7 @@ class HookahBarTableViewController: UITableViewController {
         if segue.identifier == "showDetailsSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let destinationVC = segue.destinationViewController as! DetailsViewController
-                destinationVC.hookahBarImage = self.myHookahBar[indexPath.row].image
+                destinationVC.hookahBar = self.myHookahBar[indexPath.row]
 
 
             }

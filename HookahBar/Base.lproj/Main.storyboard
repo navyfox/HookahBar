@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--My Hookah Bar-->
         <scene sceneID="V0a-Wm-njC">
             <objects>
                 <tableViewController id="oK4-eI-lO6" customClass="HookahBarTableViewController" customModule="HookahBar" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,7 +58,7 @@
                             <outlet property="delegate" destination="oK4-eI-lO6" id="zjY-I6-ZRo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="oGd-tO-nlE"/>
+                    <navigationItem key="navigationItem" title="My Hookah Bar" id="oGd-tO-nlE"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DTB-Yq-UPa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,15 +76,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMG-3B-MID">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="roW-Gp-XH3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="FMG-3B-MID">
+                                    <rect key="frame" x="0.0" y="64" width="320" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Yod-Ap-N6K" customClass="DetailsTableViewCell" customModule="HookahBar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="392" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yod-Ap-N6K" id="E9i-cg-aoV">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-8y-uTP">
+                                                    <rect key="frame" x="140" y="11" width="172" height="21"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egG-yh-Ztd">
+                                                    <rect key="frame" x="18" y="11" width="122" height="21"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="keyLable" destination="egG-yh-Ztd" id="4Va-ug-kkf"/>
+                                            <outlet property="valueLable" destination="pcd-8y-uTP" id="90I-Px-94T"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pe8-zF-h2T" id="ThP-Tv-zf3"/>
+                                    <outlet property="delegate" destination="pe8-zF-h2T" id="dLN-wC-Gde"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="9sO-HF-llK"/>
                     <connections>
                         <outlet property="hookahBarImageView" destination="FMG-3B-MID" id="JgK-Pm-jgL"/>
+                        <outlet property="tableView" destination="roW-Gp-XH3" id="KNq-Yz-0Np"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRM-bJ-g5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -94,7 +132,7 @@
         <!--Navigation Controller-->
         <scene sceneID="uih-cv-sjm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vJC-dZ-7Cw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="vJC-dZ-7Cw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dXj-H8-cdd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

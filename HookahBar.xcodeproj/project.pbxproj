@@ -15,6 +15,7 @@
 		203D53FA1D38C49700E1D3DC /* HookahBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203D53F91D38C49700E1D3DC /* HookahBarTableViewCell.swift */; };
 		20BA85B41D3DDD5900B8A5D2 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BA85B31D3DDD5900B8A5D2 /* DetailsViewController.swift */; };
 		20BA85B61D3DFD4300B8A5D2 /* HookahBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BA85B51D3DFD4300B8A5D2 /* HookahBar.swift */; };
+		20BA85B81D3E09C300B8A5D2 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BA85B71D3E09C300B8A5D2 /* DetailsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		203D53F91D38C49700E1D3DC /* HookahBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookahBarTableViewCell.swift; sourceTree = "<group>"; };
 		20BA85B31D3DDD5900B8A5D2 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		20BA85B51D3DFD4300B8A5D2 /* HookahBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookahBar.swift; sourceTree = "<group>"; };
+		20BA85B71D3E09C300B8A5D2 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				203D53F71D37D44500E1D3DC /* HookahBarTableViewController.swift */,
 				203D53F91D38C49700E1D3DC /* HookahBarTableViewCell.swift */,
 				20BA85B31D3DDD5900B8A5D2 /* DetailsViewController.swift */,
+				20BA85B71D3E09C300B8A5D2 /* DetailsTableViewCell.swift */,
 				203D53E91D37D34000E1D3DC /* Main.storyboard */,
 				203D53EC1D37D34000E1D3DC /* Assets.xcassets */,
 				203D53EE1D37D34000E1D3DC /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BA85B81D3E09C300B8A5D2 /* DetailsTableViewCell.swift in Sources */,
 				20BA85B61D3DFD4300B8A5D2 /* HookahBar.swift in Sources */,
 				203D53E61D37D34000E1D3DC /* AppDelegate.swift in Sources */,
 				203D53FA1D38C49700E1D3DC /* HookahBarTableViewCell.swift in Sources */,
