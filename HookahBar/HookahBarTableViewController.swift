@@ -10,11 +10,10 @@ import UIKit
 
 class HookahBarTableViewController: UITableViewController {
 
-    var hookahBarNames = ["Hookah Way", "Hookah Place", "The Дым", "УК", "Smoke House", "Panda", "Smoke Lab", "Hookah Time", "Fumari house", "UFS"]
-    var hookahBarImages = ["hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg", "hookahWay.jpg"]
-    var hookahBarLocation = ["Omsk", "Moskow", "Omsk", "Moskow", "Omsk", "Moskow", "Omsk", "Moskow", "Omsk", "Moskow"]
-    var hookahBarType = ["Bar", "Lounge-Bar", "Restaurant", "Bar", "Lounge-Bar", "Restaurant", "Bar", "Lounge-Bar", "Restaurant", "Bar"]
-    var hookahBarAlreadyVisited = [Bool](count: 10, repeatedValue: false)
+
+
+    var myHookahBar: [HookahBar] = [HookahBar(name: "Hookah Way", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Hookah Place", type: "Lounge-Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "The Дым", type: "Restaurant", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "УК", type: "Lounge-Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "UFS", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Smoke House", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Fumari house", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Panda", type: "Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "Smoke Lab", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Hookah Time", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false)]
+
 
 //Alert Controller
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -46,11 +45,7 @@ class HookahBarTableViewController: UITableViewController {
         //кнопка удалить
         let deleteAction = UITableViewRowAction(style: .Default, title: "Удалить") { (UITableViewRowAction, NSIndexPath) in
 
-            self.hookahBarAlreadyVisited.removeAtIndex(indexPath.row)
-            self.hookahBarImages.removeAtIndex(indexPath.row)
-            self.hookahBarLocation.removeAtIndex(indexPath.row)
-            self.hookahBarNames.removeAtIndex(indexPath.row)
-            self.hookahBarType.removeAtIndex(indexPath.row)
+            self.myHookahBar.removeAtIndex(indexPath.row)
             
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
@@ -85,7 +80,7 @@ class HookahBarTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return hookahBarNames.count
+        return myHookahBar.count
     }
 
 
@@ -93,17 +88,13 @@ class HookahBarTableViewController: UITableViewController {
         let cellIndentifire = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIndentifire, forIndexPath: indexPath) as! HookahBarTableViewCell
 
-        cell.nameLable.text = hookahBarNames[indexPath.row]
-        cell.thumbnailImageView.image = UIImage(named: hookahBarImages[indexPath.row])
-        cell.lacationLable.text = hookahBarLocation[indexPath.row]
-        cell.typeLable.text = hookahBarType[indexPath.row]
+        cell.nameLable.text = myHookahBar[indexPath.row].name
+        cell.thumbnailImageView.image = UIImage(named: myHookahBar[indexPath.row].image)
+        cell.lacationLable.text = myHookahBar[indexPath.row].location
+        cell.typeLable.text = myHookahBar[indexPath.row].type
 
         cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.height / 2
         cell.thumbnailImageView.clipsToBounds = true
-
-        cell.accessoryType = hookahBarAlreadyVisited[indexPath.row] ? .Checkmark : .None
-        cell.tintColor = UIColor.blackColor()
-//        cell.accessoryView = UIImageView(image: UIImage(named: "HP.png"))
 
         return cell
     }
@@ -158,8 +149,7 @@ class HookahBarTableViewController: UITableViewController {
         if segue.identifier == "showDetailsSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let destinationVC = segue.destinationViewController as! DetailsViewController
-                print(self.hookahBarImages[indexPath.row])
-                destinationVC.hookahBarImage = self.hookahBarImages[indexPath.row]
+                destinationVC.hookahBarImage = self.myHookahBar[indexPath.row].image
 
 
             }
