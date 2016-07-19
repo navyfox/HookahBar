@@ -13,6 +13,7 @@
 		203D53F01D37D34000E1D3DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203D53EE1D37D34000E1D3DC /* LaunchScreen.storyboard */; };
 		203D53F81D37D44500E1D3DC /* HookahBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203D53F71D37D44500E1D3DC /* HookahBarTableViewController.swift */; };
 		203D53FA1D38C49700E1D3DC /* HookahBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203D53F91D38C49700E1D3DC /* HookahBarTableViewCell.swift */; };
+		208FFCA51D3E682600EC45F8 /* QuickReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208FFCA41D3E682600EC45F8 /* QuickReviewViewController.swift */; };
 		20BA85B41D3DDD5900B8A5D2 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BA85B31D3DDD5900B8A5D2 /* DetailsViewController.swift */; };
 		20BA85B61D3DFD4300B8A5D2 /* HookahBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BA85B51D3DFD4300B8A5D2 /* HookahBar.swift */; };
 		20BA85B81D3E09C300B8A5D2 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BA85B71D3E09C300B8A5D2 /* DetailsTableViewCell.swift */; };
@@ -27,6 +28,7 @@
 		203D53F11D37D34000E1D3DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		203D53F71D37D44500E1D3DC /* HookahBarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookahBarTableViewController.swift; sourceTree = "<group>"; };
 		203D53F91D38C49700E1D3DC /* HookahBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookahBarTableViewCell.swift; sourceTree = "<group>"; };
+		208FFCA41D3E682600EC45F8 /* QuickReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickReviewViewController.swift; sourceTree = "<group>"; };
 		20BA85B31D3DDD5900B8A5D2 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		20BA85B51D3DFD4300B8A5D2 /* HookahBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HookahBar.swift; sourceTree = "<group>"; };
 		20BA85B71D3E09C300B8A5D2 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -62,12 +64,13 @@
 		203D53E41D37D34000E1D3DC /* HookahBar */ = {
 			isa = PBXGroup;
 			children = (
-				20BA85B51D3DFD4300B8A5D2 /* HookahBar.swift */,
 				203D53E51D37D34000E1D3DC /* AppDelegate.swift */,
 				203D53F71D37D44500E1D3DC /* HookahBarTableViewController.swift */,
+				20BA85B51D3DFD4300B8A5D2 /* HookahBar.swift */,
 				203D53F91D38C49700E1D3DC /* HookahBarTableViewCell.swift */,
 				20BA85B31D3DDD5900B8A5D2 /* DetailsViewController.swift */,
 				20BA85B71D3E09C300B8A5D2 /* DetailsTableViewCell.swift */,
+				208FFCA41D3E682600EC45F8 /* QuickReviewViewController.swift */,
 				203D53E91D37D34000E1D3DC /* Main.storyboard */,
 				203D53EC1D37D34000E1D3DC /* Assets.xcassets */,
 				203D53EE1D37D34000E1D3DC /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				20BA85B81D3E09C300B8A5D2 /* DetailsTableViewCell.swift in Sources */,
 				20BA85B61D3DFD4300B8A5D2 /* HookahBar.swift in Sources */,
 				203D53E61D37D34000E1D3DC /* AppDelegate.swift in Sources */,
+				208FFCA51D3E682600EC45F8 /* QuickReviewViewController.swift in Sources */,
 				203D53FA1D38C49700E1D3DC /* HookahBarTableViewCell.swift in Sources */,
 				203D53F81D37D44500E1D3DC /* HookahBarTableViewController.swift in Sources */,
 				20BA85B41D3DDD5900B8A5D2 /* DetailsViewController.swift in Sources */,

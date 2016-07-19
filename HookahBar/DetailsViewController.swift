@@ -12,6 +12,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
 
     @IBOutlet var hookahBarImageView: UIImageView!
     @IBOutlet var tableView: UITableView!
+    @IBAction func close(segue: UIStoryboardSegue){}
     
     var hookahBar: HookahBar!
 
