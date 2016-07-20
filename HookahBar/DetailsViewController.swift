@@ -74,6 +74,20 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 2 {
+            self.performSegueWithIdentifier("showTheMap", sender: nil)
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showTheMap" {
+            let destinationVC = segue.destinationViewController as! MapHookahBarLocationViewController
+            destinationVC.hookahBar = hookahBar
+        }
+    }
+
     /*
     // MARK: - Navigation
 

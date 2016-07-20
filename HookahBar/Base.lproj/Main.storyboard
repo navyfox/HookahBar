@@ -166,6 +166,7 @@
                     <connections>
                         <outlet property="hookahBarImageView" destination="FMG-3B-MID" id="JgK-Pm-jgL"/>
                         <outlet property="tableView" destination="roW-Gp-XH3" id="KNq-Yz-0Np"/>
+                        <segue destination="W2b-hc-jPq" kind="push" identifier="showTheMap" id="Zgd-go-vtl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vRM-bJ-g5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,7 +255,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZT-Er-Itt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="xhS-aI-oZu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1369" y="669"/>
+            <point key="canvasLocation" x="1369" y="375"/>
+        </scene>
+        <!--Map Hookah Bar Location View Controller-->
+        <scene sceneID="nQw-I0-eiv">
+            <objects>
+                <viewController id="W2b-hc-jPq" customClass="MapHookahBarLocationViewController" customModule="HookahBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IsS-zh-Fi0"/>
+                        <viewControllerLayoutGuide type="bottom" id="wKu-Ga-T7D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a7T-gi-MwF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PqV-Xn-MDI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uPj-v5-Sbo"/>
+                    <connections>
+                        <outlet property="mapView" destination="PqV-Xn-MDI" id="QuJ-CZ-ayY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ok-mu-FaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1369" y="1107"/>
         </scene>
         <!--Quick Review View Controller-->
         <scene sceneID="evx-2e-4qb">
@@ -330,7 +358,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDM-Fa-zWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8kE-nX-neG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1369" y="11"/>
+            <point key="canvasLocation" x="1369" y="-245"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uih-cv-sjm">

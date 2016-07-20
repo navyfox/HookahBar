@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2003B9791D3F6B4E00314F23 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2003B9781D3F6B4E00314F23 /* ShareViewController.swift */; };
+		2003B97D1D3F8CC800314F23 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2003B97C1D3F8CC800314F23 /* MapKit.framework */; };
+		2003B97F1D3F901F00314F23 /* MapHookahBarLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2003B97E1D3F901F00314F23 /* MapHookahBarLocationViewController.swift */; };
 		203D53E61D37D34000E1D3DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203D53E51D37D34000E1D3DC /* AppDelegate.swift */; };
 		203D53EB1D37D34000E1D3DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203D53E91D37D34000E1D3DC /* Main.storyboard */; };
 		203D53ED1D37D34000E1D3DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203D53EC1D37D34000E1D3DC /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		2003B9781D3F6B4E00314F23 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		2003B97C1D3F8CC800314F23 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2003B97E1D3F901F00314F23 /* MapHookahBarLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapHookahBarLocationViewController.swift; sourceTree = "<group>"; };
 		203D53E21D37D34000E1D3DC /* HookahBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		203D53E51D37D34000E1D3DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		203D53EA1D37D34000E1D3DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2003B97D1D3F8CC800314F23 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,7 @@
 		203D53D91D37D34000E1D3DC = {
 			isa = PBXGroup;
 			children = (
+				2003B97C1D3F8CC800314F23 /* MapKit.framework */,
 				203D53E41D37D34000E1D3DC /* HookahBar */,
 				203D53E31D37D34000E1D3DC /* Products */,
 			);
@@ -74,6 +80,7 @@
 				20BA85B71D3E09C300B8A5D2 /* DetailsTableViewCell.swift */,
 				208FFCA41D3E682600EC45F8 /* QuickReviewViewController.swift */,
 				2003B9781D3F6B4E00314F23 /* ShareViewController.swift */,
+				2003B97E1D3F901F00314F23 /* MapHookahBarLocationViewController.swift */,
 				203D53E91D37D34000E1D3DC /* Main.storyboard */,
 				203D53EC1D37D34000E1D3DC /* Assets.xcassets */,
 				203D53EE1D37D34000E1D3DC /* LaunchScreen.storyboard */,
@@ -114,6 +121,14 @@
 				TargetAttributes = {
 					203D53E11D37D34000E1D3DC = {
 						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -154,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BA85B81D3E09C300B8A5D2 /* DetailsTableViewCell.swift in Sources */,
+				2003B97F1D3F901F00314F23 /* MapHookahBarLocationViewController.swift in Sources */,
 				20BA85B61D3DFD4300B8A5D2 /* HookahBar.swift in Sources */,
 				203D53E61D37D34000E1D3DC /* AppDelegate.swift in Sources */,
 				208FFCA51D3E682600EC45F8 /* QuickReviewViewController.swift in Sources */,
