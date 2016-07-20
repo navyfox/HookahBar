@@ -11,6 +11,13 @@ import UIKit
 class AddHookahBarTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var locationTextField: UILabel!
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var noButton: UIButton!
+
+    var isVisited = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +53,50 @@ class AddHookahBarTableViewController: UITableViewController, UIImagePickerContr
         imageView.image = info[UIImagePickerControllerOriginalImage] as! UIImage!
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func saveHookahBar() {
+        //проверка на заполнение полей
+        var error = ""
+        if nameTextField.text!.isEmpty {
+            error = "Название"
+        } else if typeTextField.text!.isEmpty {
+            error = "Тип"
+        } else if locationTextField.text!.isEmpty {
+            error = "Расположение"
+        }
+
+        if error != "" {
+            let alertController = UIAlertController(title: "Ого", message: "Сохранение не удалось, так как поле \(error) не заполнено", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            alertController.addAction(okAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+
+            return
+
+        }
+
+        print("Значение поля nameTextField: " + nameTextField.text!)
+        print("Значение поля typeTextField: " + typeTextField.text!)
+        print("Значение поля locationTextField: " + locationTextField.text!)
+        print("Посетили ли вы ресторан: " + (self.isVisited ? "Да" : "Нет"))
+
+        performSegueWithIdentifier("unwindBackToHomeScreen", sender: self)
+
+    }
+
+    @IBAction func isHookahBarVisited(sender: AnyObject) {
+        let pressedButton = sender as! UIButton
+
+        if pressedButton == yesButton {
+            isVisited = true
+            yesButton.backgroundColor = UIColor(red: 0, green: 120 / 255, blue: 10 / 255, alpha: 1.0)
+            noButton.backgroundColor = UIColor.grayColor()
+        } else if pressedButton == noButton {
+            isVisited = false
+            noButton.backgroundColor = UIColor.redColor()
+            yesButton.backgroundColor = UIColor.grayColor()
+        }
     }
 
 //    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {

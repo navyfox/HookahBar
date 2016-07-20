@@ -37,7 +37,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название Hookah Bar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdY-ze-t1h">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название Hookah Bar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdY-ze-t1h">
                                                     <rect key="frame" x="8" y="31" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -64,7 +64,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Тип Hookah Bar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ULu-67-7v7">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Тип Hookah Bar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ULu-67-7v7">
                                                     <rect key="frame" x="8" y="31" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -79,7 +79,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Адрес Hookah Bar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pRK-3H-KcO">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Адрес Hookah Bar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pRK-3H-KcO">
                                                     <rect key="frame" x="8" y="31" width="304" height="30"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -113,6 +113,9 @@
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="isHookahBarVisited:" destination="5GN-q3-O4D" eventType="touchUpInside" id="QWd-zb-Bfy"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSI-yN-VCi">
                                                     <rect key="frame" x="116" y="31" width="89" height="30"/>
@@ -121,6 +124,9 @@
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="isHookahBarVisited:" destination="5GN-q3-O4D" eventType="touchUpInside" id="nGk-Qi-9MJ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -137,15 +143,23 @@
                         <barButtonItem key="leftBarButtonItem" title="Отменить" id="6PC-6t-ZIX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="J2L-zU-5tF" kind="unwind" unwindAction="unwindBackToHomeScreen:" id="TiY-Lc-yZN"/>
+                                <segue destination="J2L-zU-5tF" kind="unwind" identifier="unwindBackToHomeScreen" unwindAction="unwindBackToHomeScreen:" id="TiY-Lc-yZN"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Сохранить" id="6IE-wE-cfX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveHookahBar" destination="5GN-q3-O4D" id="wh9-QR-Nwm"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="NAt-X4-AAm" id="jGv-GU-HLc"/>
+                        <outlet property="locationTextField" destination="pxg-Fm-OlE" id="dBC-Fj-XEG"/>
+                        <outlet property="nameTextField" destination="cdY-ze-t1h" id="GPy-Qi-R3h"/>
+                        <outlet property="noButton" destination="jSI-yN-VCi" id="3sA-DE-1n1"/>
+                        <outlet property="typeTextField" destination="ULu-67-7v7" id="nQp-4h-oUB"/>
+                        <outlet property="yesButton" destination="M34-FW-yuD" id="F5O-L1-meG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krN-Xq-j8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
