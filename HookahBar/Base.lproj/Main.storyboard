@@ -236,6 +236,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="4Oh-FY-4FW" id="jTb-i2-IcL"/>
+                        <outlet property="windowView" destination="S3J-FR-SnR" id="v3W-aU-Cza"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDM-Fa-zWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
