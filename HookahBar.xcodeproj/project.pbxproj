@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2003B9791D3F6B4E00314F23 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2003B9781D3F6B4E00314F23 /* ShareViewController.swift */; };
 		203D53E61D37D34000E1D3DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203D53E51D37D34000E1D3DC /* AppDelegate.swift */; };
 		203D53EB1D37D34000E1D3DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203D53E91D37D34000E1D3DC /* Main.storyboard */; };
 		203D53ED1D37D34000E1D3DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 203D53EC1D37D34000E1D3DC /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2003B9781D3F6B4E00314F23 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		203D53E21D37D34000E1D3DC /* HookahBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		203D53E51D37D34000E1D3DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		203D53EA1D37D34000E1D3DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				20BA85B31D3DDD5900B8A5D2 /* DetailsViewController.swift */,
 				20BA85B71D3E09C300B8A5D2 /* DetailsTableViewCell.swift */,
 				208FFCA41D3E682600EC45F8 /* QuickReviewViewController.swift */,
+				2003B9781D3F6B4E00314F23 /* ShareViewController.swift */,
 				203D53E91D37D34000E1D3DC /* Main.storyboard */,
 				203D53EC1D37D34000E1D3DC /* Assets.xcassets */,
 				203D53EE1D37D34000E1D3DC /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 				208FFCA51D3E682600EC45F8 /* QuickReviewViewController.swift in Sources */,
 				203D53FA1D38C49700E1D3DC /* HookahBarTableViewCell.swift in Sources */,
 				203D53F81D37D44500E1D3DC /* HookahBarTableViewController.swift in Sources */,
+				2003B9791D3F6B4E00314F23 /* ShareViewController.swift in Sources */,
 				20BA85B41D3DDD5900B8A5D2 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
