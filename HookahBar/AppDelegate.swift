@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
 
-        UIBarButtonItem.appearance().tintColor = UIColor(red: 201 / 255, green: 81 / 255, blue: 0.0, alpha: 1.0)
+//        UIBarButtonItem.appearance().tintColor = UIColor(red: 201 / 255, green: 81 / 255, blue: 0.0, alpha: 1.0)
         UIToolbar.appearance().barTintColor = UIColor(red: 235 / 255, green: 240 / 255, blue: 240 / 255, alpha: 1.0)
         return true
     }

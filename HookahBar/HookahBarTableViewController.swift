@@ -14,6 +14,8 @@ class HookahBarTableViewController: UITableViewController {
 
     var myHookahBar: [HookahBar] = [HookahBar(name: "Hookah Way", type: "Bar", image: "hookahWay.jpg", location: "Omsk, проспект Карла Маркса 18/8", isViseted: false), HookahBar(name: "Hookah Place", type: "Lounge-Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "The Дым", type: "Restaurant", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "УК", type: "Lounge-Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "UFS", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Smoke House", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Fumari house", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Panda", type: "Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "Smoke Lab", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Hookah Time", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false)]
 
+    @IBAction func unwindBackToHomeScreen(segue: UIStoryboardSegue){}
+
 
 //Alert Controller
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
