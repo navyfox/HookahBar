@@ -208,6 +208,9 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check-icon-green" translatesAutoresizingMaskIntoConstraints="NO" id="05w-zH-hbQ">
+                                            <rect key="frame" x="296" y="8" width="16" height="16"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="jAL-Eg-dIC" firstAttribute="leading" secondItem="I5f-w6-ia9" secondAttribute="leadingMargin" constant="87" id="3fx-ra-cWd"/>
@@ -223,6 +226,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="checkImageView" destination="05w-zH-hbQ" id="TIR-eA-If5"/>
                                     <outlet property="lacationLable" destination="jAL-Eg-dIC" id="m8L-Xe-IiV"/>
                                     <outlet property="nameLable" destination="IZW-qn-J2v" id="v63-RP-qFL"/>
                                     <outlet property="thumbnailImageView" destination="2o1-qu-BYo" id="N8N-Xp-IYs"/>
@@ -570,6 +574,7 @@
     <resources>
         <image name="addImage" width="756" height="756"/>
         <image name="bad" width="192" height="192"/>
+        <image name="check-icon-green" width="16" height="16"/>
         <image name="close" width="128" height="128"/>
         <image name="facebook" width="128" height="128"/>
         <image name="g" width="128" height="128"/>

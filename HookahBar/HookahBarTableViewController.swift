@@ -12,7 +12,7 @@ class HookahBarTableViewController: UITableViewController {
 
 
 
-    var myHookahBar: [HookahBar] = [HookahBar(name: "Hookah Way", type: "Bar", image: "hookahWay.jpg", location: "Omsk, проспект Карла Маркса 18/8", isViseted: false), HookahBar(name: "Hookah Place", type: "Lounge-Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "The Дым", type: "Restaurant", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "УК", type: "Lounge-Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "UFS", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Smoke House", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Fumari house", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Panda", type: "Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "Smoke Lab", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Hookah Time", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false)]
+    var myHookahBar: [HookahBar] = [HookahBar(name: "Hookah Way", type: "Bar", image: "hookahWay.jpg", location: "Omsk, проспект Карла Маркса 18/8", isViseted: true), HookahBar(name: "Hookah Place", type: "Lounge-Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "The Дым", type: "Restaurant", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "УК", type: "Lounge-Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "UFS", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Smoke House", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Fumari house", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Panda", type: "Bar", image: "hookahWay.jpg", location: "Moskow", isViseted: false), HookahBar(name: "Smoke Lab", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false), HookahBar(name: "Hookah Time", type: "Bar", image: "hookahWay.jpg", location: "Omsk", isViseted: false)]
 
     @IBAction func unwindBackToHomeScreen(segue: UIStoryboardSegue){}
 
@@ -99,7 +99,7 @@ class HookahBarTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIndentifire = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIndentifire, forIndexPath: indexPath) as! HookahBarTableViewCell
-
+        //Configure the cell
         cell.nameLable.text = myHookahBar[indexPath.row].name
         cell.thumbnailImageView.image = UIImage(named: myHookahBar[indexPath.row].image)
         cell.lacationLable.text = myHookahBar[indexPath.row].location
@@ -107,6 +107,8 @@ class HookahBarTableViewController: UITableViewController {
 
         cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.height / 2
         cell.thumbnailImageView.clipsToBounds = true
+
+        cell.checkImageView.hidden = !myHookahBar[indexPath.row].isViseted
 
         return cell
     }

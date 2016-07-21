@@ -14,7 +14,7 @@ class HookahBarTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLable: UILabel!
     @IBOutlet weak var lacationLable: UILabel!
     @IBOutlet weak var typeLable: UILabel!
-
+    @IBOutlet weak var checkImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
